@@ -11,10 +11,10 @@ namespace {
 inline std::map<int, bool> createSimulationRunMap()
 {
     std::map<int, bool> iterationSignals;
-    for (int i = 1; i <= 30; i++) {
+    for (int i = 1; i <= 15; i++) {
         iterationSignals[i] = false;
     }
-    iterationSignals[10] = true;
+    iterationSignals[5] = true;
     return iterationSignals;
 }
 
@@ -39,7 +39,7 @@ int main()
         std::cout << "Iteration Count: " << iterationCount << ", IsReliefRequested: " << isReliefRequiredSignal
                   << ", IsValveActive: " << openValveSignal << '\n';
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 
     return 0;
